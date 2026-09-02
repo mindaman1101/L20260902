@@ -3,14 +3,12 @@
 
 using namespace std;
 
-AActor::AActor()
+AActor::AActor() : Location(0, 0)
 {
-	cout << "AActor 持失切" << endl;
 }
 
 AActor::~AActor()
 {
-	cout << "AActor 社瑚切" << endl;
 }
 
 void AActor::Tick()

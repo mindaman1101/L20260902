@@ -1,17 +1,23 @@
 #pragma once
-#include "World.h"
-#include "InputDevice.h"
-#include "Renderer.h"
+#include "Object.h"
 
-class UEngine
+class UWorld;
+
+class UEngine : public UObject
 {
 public:
 	UEngine();
 
 	virtual ~UEngine();
 
-private:
+	void Init();
+	void Run();
+	void Exit();
+
+	virtual UWorld* GetWorld() const override;
+
+
+protected:
+	//class UWorld* World;
 	UWorld* World;
-	UInputDevice* InputDevice;
-	URenderer* Renderer;
 };

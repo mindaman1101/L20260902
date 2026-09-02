@@ -5,12 +5,10 @@ using namespace std;
 
 UInputDevice::UInputDevice()
 {
-	cout << "UInputDevice 持失切" << endl;
 }
 
 UInputDevice::~UInputDevice()
 {
-	cout << "UInputDevice 社瑚切" << endl;
 }
 
 void UInputDevice::GetInput()

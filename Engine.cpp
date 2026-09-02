@@ -1,14 +1,27 @@
 #include "Engine.h"
-#include <iostream>
+#include "World.h"
 
-using namespace std;
-
-UEngine::UEngine()
+UEngine::UEngine() : World(nullptr)
 {
-	cout << "UEngine 持失切" << endl;
 }
 
 UEngine::~UEngine()
 {
-	cout << "UEngine 社瑚切" << endl;
+}
+
+void UEngine::Init()
+{
+}
+
+void UEngine::Run()
+{
+}
+
+void UEngine::Exit()
+{
+}
+
+UWorld* UEngine::GetWorld() const
+{
+	return World;
 }
