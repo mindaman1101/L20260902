@@ -9,5 +9,9 @@ public:
 	APawn();
 	virtual ~APawn();
 
+	virtual void Tick() override;
+
+	virtual void Render() override;
+
 	//virtual UWorld* GetWorld() const override;
 };

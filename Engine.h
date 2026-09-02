@@ -19,5 +19,6 @@ public:
 
 protected:
 	//class UWorld* World;
-	UWorld* World;
+	UWorld* World = nullptr;
+	bool bIsRunning = true;
 };

@@ -27,21 +27,21 @@ using namespace std;
 //class UTexture
 //{
 //public:
-//	//±âº» »ı¼ºÀÚ ÀÖ¾î?
-//	//º¹»ç »ı¼ºÀÚ ÀÖ¾î?
-//	//¾øÀ¸¸é ÀÚµ¿ ±âº» º¹»ç »ı¼ºÀÚ(³»°¡ ¾Æ´Â ÇüÅÂ¸¸ ÇÑ´Ù)
+//	//ê¸°ë³¸ ìƒì„±ì ìˆì–´?
+//	//ë³µì‚¬ ìƒì„±ì ìˆì–´?
+//	//ì—†ìœ¼ë©´ ìë™ ê¸°ë³¸ ë³µì‚¬ ìƒì„±ì(ë‚´ê°€ ì•„ëŠ” í˜•íƒœë§Œ í•œë‹¤)
 //
 //	UTexture(string Texturename)
 //	{
 //		Data = new char[1024];
-//		//ÅØ½ºÃ³¸¦ ·Îµù
+//		//í…ìŠ¤ì²˜ë¥¼ ë¡œë”©
 //	}
 //
 //	//deep copy
 //	UTexture(const UTexture& RHS)
 //	{
 //		Data = new char[1024];
-//		memcpy(Data, RHS.Data, 1024);  //memcpy´Â ÀÚ¼¼È÷ ¼³¸í ¾ÈÇÔ ³ªÁß¿¡ ÇÑ´ë
+//		memcpy(Data, RHS.Data, 1024);  //memcpyëŠ” ìì„¸íˆ ì„¤ëª… ì•ˆí•¨ ë‚˜ì¤‘ì— í•œëŒ€
 //	}
 //
 //	~UTexture()
@@ -52,13 +52,22 @@ using namespace std;
 //	char* Data;
 //};
 
+//ìë£Œêµ¬ì¡° - í”„ë¡œê·¸ë¨ ë§Œë“¤ë•Œ ìì£¼? ì–´ì©Œë‹¤ ì“¸ê¹Œ?
+//ì§„ì˜ì´í•œí…Œ ë§Œë“¤ë¼ê³  ì‹œí‚¬ê¹Œ? ë§¤ë²ˆ? ì €ë†ˆì„ ì–´ë–»ê²Œ ë¯¿ê³ ?
+//Library -> ë„ì„œê´€, í”„ë¡œê·¸ë¨ ë„ì„œê´€
+//Standard Template Library -> STL
+//[][][][][][][][] -> ìƒìˆ˜ì‹œê°„ì— ì ‘ê·¼(ëœë¤ì–µì„¸ìŠ¤)
+//í¬ê¸° ë³€ê²½ -> ìì£¼ í•˜ì§€ ì•ŠìŒ.
+//vector
+//Container, vector, list, queue, stack, tree, deqeue, map, set ...
+
 int main()
 {
 	////FVector2D T;
 	////FVector2D T(1);
 	//FVector2D T(1, 1);
 	////T.SetVector2D(1, 2);
-	//FVector2D T2 = T;  //º¹»ç »ı¼ºÀÚ, ±íÀº º¹»ç, ¾èÀº º¹»ç
+	//FVector2D T2 = T;  //ë³µì‚¬ ìƒì„±ì, ê¹Šì€ ë³µì‚¬, ì–•ì€ ë³µì‚¬
 
 	////FVector2D T3 = T2.operator+(T);
 	//FVector2D T3 = T2 + T;
@@ -77,6 +86,58 @@ int main()
 	////UTexture T("1.png");
 	////UTexture T1("2.png");
 	////UTexture T2 = T;
+
+		//std::vector<int> Data;
+
+	//Data.push_back(3);
+	//Data.push_back(7);
+	//Data.push_back(4);
+	//Data.push_back(1);
+	//Data.push_back(3);
+	//Data.push_back(2);
+	//Data.push_back(5);
+	//Data.push_back(6);
+
+	//std::cout << Data.size() << std::endl;
+	//
+	//Data.erase(std::find(Data.begin(), Data.end(), 3));
+	//Data.insert(std::find(Data.begin(), Data.end(), 4), 20);
+	//std::sort(Data.begin(), Data.end());
+
+	////for (auto Iter = Data.rbegin(); Iter != Data.rend(); ++Iter)
+	////{
+	////	std::cout << *Iter << std::endl;
+	////}
+
+
+	//for (auto Value : Data)
+	//{
+	//	std::cout << Value << std::endl;
+	//}
+	//std::cout << Data.size() << std::endl;
+
+	//std::list<int> List;
+
+	//List.push_back(7);
+	//List.push_back(4);
+	//List.push_back(1);
+	//List.push_back(3);
+	//List.push_back(2);
+	//List.push_back(5);
+	//List.push_back(6);
+
+	//List.erase(std::find(List.begin(), List.end(), 3));
+	//List.insert(std::find(List.begin(), List.end(), 4), 20);
+	////for (auto Iter = List.rbegin(); Iter != List.rend(); ++Iter)
+	////{
+	////	std::cout << *Iter << std::endl;
+	////}
+
+	//for (auto Value : List)
+	//{
+	//	std::cout << Value << std::endl;
+	//}
+	//
 
 	UEngine* MyEngine = new UEngine();
 

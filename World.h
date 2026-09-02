@@ -4,8 +4,6 @@
 
 class AActor;
 
-using namespace std;
-
 class UWorld : public UObject
 {
 public:
@@ -13,5 +11,24 @@ public:
 
 	virtual ~UWorld();
 
-	virtual UWorld* GetWorld() const;
+	void Tick();
+	void Render();
+
+	template<typename T>
+	void SpawnActor();
+
+
+	std::vector<AActor*>& GetActors()
+	{
+		return Actors;
+	}
+
+protected:
+	std::vector<AActor*> Actors;
 };
+
+template<typename T>
+inline void UWorld::SpawnActor()
+{
+	Actors.push_back(new T);
+}

@@ -8,7 +8,10 @@ APawn::~APawn()
 {
 }
 
-UWorld* APawn::GetWorld() const
+void APawn::Tick()
 {
-	return nullptr;
+}
+
+void APawn::Render()
+{
 }

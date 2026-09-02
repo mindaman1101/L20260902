@@ -22,6 +22,7 @@ FVector2D::~FVector2D()
 {
 }
 
+
 FVector2D FVector2D::operator+(const FVector2D& RHS) const
 {
 	return FVector2D(X + RHS.X, Y + RHS.Y);
