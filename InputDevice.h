@@ -7,5 +7,8 @@ public:
 
 	virtual ~UInputDevice();
 
+	virtual void GetInput();
+
+private:
 	char KeyboardInput;
 };

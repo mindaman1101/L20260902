@@ -11,5 +11,6 @@ public:
 
 	virtual ~UWorld();
 
+private:
 	vector<AActor*> Actors;
 };

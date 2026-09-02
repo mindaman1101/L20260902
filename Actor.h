@@ -11,5 +11,6 @@ public:
 	virtual void Tick();
 	virtual void Render();
 
+protected:
 	FVector2D Position;
 };

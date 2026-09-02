@@ -12,3 +12,7 @@ UInputDevice::~UInputDevice()
 {
 	cout << "UInputDevice ¼Ò¸êÀÚ" << endl;
 }
+
+void UInputDevice::GetInput()
+{
+}

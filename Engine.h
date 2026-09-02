@@ -9,7 +9,7 @@ public:
 
 	virtual ~UEngine();
 
+private:
 	UWorld* World;
-
 	UInputDevice* InputDevice;
 };
