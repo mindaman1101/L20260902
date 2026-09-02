@@ -1,6 +1,7 @@
 #pragma once
 #include "World.h"
 #include "InputDevice.h"
+#include "Renderer.h"
 
 class UEngine
 {
@@ -12,4 +13,5 @@ public:
 private:
 	UWorld* World;
 	UInputDevice* InputDevice;
+	URenderer* Renderer;
 };
