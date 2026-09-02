@@ -9,6 +9,5 @@ public:
 	APawn();
 	virtual ~APawn();
 
-	virtual UWorld* GetWorld() const override;
+	//virtual UWorld* GetWorld() const override;
 };
-

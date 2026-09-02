@@ -1,7 +1,4 @@
 #include "Actor.h"
-#include <iostream>
-
-using namespace std;
 
 AActor::AActor() : Location(0, 0)
 {
@@ -17,4 +14,9 @@ void AActor::Tick()
 
 void AActor::Render()
 {
+}
+
+UWorld* AActor::GetWorld() const
+{
+	return World;
 }

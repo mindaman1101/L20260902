@@ -2,8 +2,9 @@
 
 struct FVector2D
 {
-public:
+//public:
 	//FVector2D();
+	// 
 	//생성자 오버로딩
 	FVector2D(int InX = 0, int InY = 0);  //아무것도 안쓰면 0, 0 채워줌
 	FVector2D(const FVector2D& RHS);
@@ -12,24 +13,24 @@ public:
 
 	virtual ~FVector2D();
 
-	//encapsulation
-	inline void SetX(int NewValue)
-	{
-		X = NewValue;
-	}
-	inline int GetX() const
-	{
-		return X;
-	}	
+	////encapsulation
+	//inline void SetX(int NewValue)
+	//{
+	//	X = NewValue;
+	//}
+	//inline int GetX() const
+	//{
+	//	return X;
+	//}	
 
-	inline void SetY(int NewValue)
-	{
-		Y = NewValue;
-	}
-	inline int GetY() const
-	{
-		return Y;
-	}
+	//inline void SetY(int NewValue)
+	//{
+	//	Y = NewValue;
+	//}
+	//inline int GetY() const
+	//{
+	//	return Y;
+	//}
 
 	////__forceinline / FORCEINLINE
 	//inline void SetVector2D(int NewValueX, int NewValueY)

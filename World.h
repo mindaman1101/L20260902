@@ -1,7 +1,8 @@
 #pragma once
 #include "Object.h"
 #include <vector>
-#include "Actor.h"
+
+class AActor;
 
 using namespace std;
 
@@ -13,7 +14,4 @@ public:
 	virtual ~UWorld();
 
 	virtual UWorld* GetWorld() const;
-
-private:
-	vector<AActor*> Actors;
 };

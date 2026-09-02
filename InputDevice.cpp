@@ -1,7 +1,4 @@
 #include "InputDevice.h"
-#include <iostream>
-
-using namespace std;
 
 UInputDevice::UInputDevice()
 {
