@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "Engine.h"
 #include "World.h"
 #include "Floor.h"
@@ -50,7 +51,7 @@ void UEngine::Run()
 	{
 		Input();
 		World->Tick();
-		system("cls");
+		//system("cls");
 		World->Render();
 	}
 }
@@ -86,11 +87,6 @@ void UEngine::OpenLevel(std::string MapName)
 				AActor* NewActor = World->SpawnActor<AWall>();
 				NewActor->Location = FVector2D(X, Y);
 			}
-			else if (Map[Y][X] == 0)
-			{
-				AActor* NewActor = World->SpawnActor<AFloor>();
-				NewActor->Location = FVector2D(X, Y);
-			}
 			else if (Map[Y][X] == 2)
 			{
 				AActor* NewActor = World->SpawnActor<APlayer>();
@@ -106,7 +102,58 @@ void UEngine::OpenLevel(std::string MapName)
 				AActor* NewActor = World->SpawnActor<AGoal>();
 				NewActor->Location = FVector2D(X, Y);
 			}
+
+			AActor* NewActor = World->SpawnActor<AFloor>();
+			NewActor->Location = FVector2D(X, Y);
 		}
+	}
+
+	//bubble sort, selection sort, quick sort, merge sort...
+
+	//5, 3, 1, 2, 4
+	//3, 5, 1, 2, 4
+	//1, 5, 3, 2, 4
+	//1, 3, 5, 2, 4
+	//1, 2, 5, 3, 4
+	//1, 2, 3, 5, 4
+	//1, 2, 3, 4, 5
+
+	//for (int i = 0; i < GetWorld()->GetActors().size(); ++i)
+	//{
+	//	for (int j = i + 1; j < GetWorld()->GetActors().size(); j++)
+	//	{
+	//		if (GetWorld()->GetActors()[i]->Layer > GetWorld()->GetActors()[j]->Layer)
+	//		{
+	//			AActor* Temp = GetWorld()->GetActors()[i];
+	//			GetWorld()->GetActors()[i] = GetWorld()->GetActors()[j];
+	//			GetWorld()->GetActors()[j] = Temp;
+	//		}
+	//	}
+	//}
+
+	//std::sort(GetWorld()->GetActors().begin(), GetWorld()->GetActors().end(), UEngine::Compare);
+
+	//무명 함수
+	//람다 함수
+
+	//람다 함수 사용 예시: AsyncLoadTexture([]() { };) 비동기 함수에 많이 씀. 콜백 함수
+
+	std::sort(GetWorld()->GetActors().begin(), GetWorld()->GetActors().end(),
+		[&](AActor* A, AActor* B) {
+			return (A->Layer < B->Layer);
+		}
+	);
+}
+
+bool UEngine::Compare(AActor* A, AActor* B)
+{
+	if (A->Layer < B->Layer)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }
 
