@@ -1,14 +1,19 @@
 #pragma once
 
-class UInputDevice
+class FInputDevice
 {
 public:
-	UInputDevice();
+	FInputDevice();
 
-	virtual ~UInputDevice();
+	virtual ~FInputDevice();
 
-	virtual void GetInput();
+	int Input();
 
-private:
-	char KeyboardInput;
+	inline int GetKeyCode()
+	{
+		return KeyCode;
+	}
+
+protected:
+	int KeyCode = 0;
 };

@@ -1,7 +1,10 @@
 #pragma once
 #include "Object.h"
+#include <string>
 
 class UWorld;
+class FInputDevice;
+class FRenderer;
 
 class UEngine : public UObject
 {
@@ -14,11 +17,13 @@ public:
 	void Run();
 	void Exit();
 
-	virtual UWorld* GetWorld() const override;
+	void OpenLevel(std::string MapName);
 
+	virtual UWorld* GetWorld() const override;
+	const FRenderer* GetRenderer();
 
 protected:
-	//class UWorld* World;
-	UWorld* World = nullptr;
 	bool bIsRunning = true;
+	FInputDevice* InputDevice = nullptr;
+	FRenderer* Renderer = nullptr;
 };

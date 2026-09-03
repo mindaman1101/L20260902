@@ -1,9 +1,15 @@
 #include "Renderer.h"
+#include "Actor.h"
 
-URenderer::URenderer()
+FRenderer::FRenderer()
 {
 }
 
-URenderer::~URenderer()
+FRenderer::~FRenderer()
 {
+}
+
+void const FRenderer::Render(const AActor* DrawActor)
+{
+
 }

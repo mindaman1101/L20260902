@@ -27,6 +27,7 @@ public:
 	virtual UWorld* GetWorld() const override final;
 
 
-	//protected:
+//protected:
 	FVector2D Location;
+	char Shape;
 };

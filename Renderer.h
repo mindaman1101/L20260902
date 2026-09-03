@@ -1,13 +1,13 @@
 #pragma once
 
-class URenderer
+class AActor;
+
+class FRenderer
 {
 public:
-	URenderer();
+	FRenderer();
 
-	virtual ~URenderer();
+	virtual ~FRenderer();
 
-private:
-	int ScreenWidth;
-	int ScreenHeight;
+	const void Render(const AActor* DrawActor);
 };

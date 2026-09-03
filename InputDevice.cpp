@@ -1,13 +1,17 @@
 #include "InputDevice.h"
+#include <conio.h>
 
-UInputDevice::UInputDevice()
+FInputDevice::FInputDevice()
 {
 }
 
-UInputDevice::~UInputDevice()
+FInputDevice::~FInputDevice()
 {
 }
 
-void UInputDevice::GetInput()
+int FInputDevice::Input()
 {
+    KeyCode = _getch();
+
+    return 0;
 }
