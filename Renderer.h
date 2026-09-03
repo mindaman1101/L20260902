@@ -9,5 +9,5 @@ public:
 
 	virtual ~FRenderer();
 
-	const void Render(const AActor* DrawActor);
+	void Render(AActor* DrawActor) const;
 };

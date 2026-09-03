@@ -18,5 +18,5 @@ public:
 
 	virtual ~APlayer();
 
-	//char Shape; -> AActorø° ≥÷¿Ω
+	virtual void Tick() override;
 };
