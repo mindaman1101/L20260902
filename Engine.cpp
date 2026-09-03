@@ -7,6 +7,8 @@
 #include "Player.h"
 #include "Actor.h"
 
+UEngine* UEngine::Instance = nullptr;
+
 UEngine::UEngine()
 {
 }
@@ -18,6 +20,16 @@ UEngine::~UEngine()
 		delete World;
 		World = nullptr;
 	}
+}
+
+UEngine* UEngine::GetInstance()
+{
+	if (!Instance)
+	{
+		Instance = new UEngine();
+	}
+
+	return Instance;
 }
 
 void UEngine::Init()
