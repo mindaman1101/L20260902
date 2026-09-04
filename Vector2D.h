@@ -49,6 +49,7 @@ struct FVector2D
 
 	//연산자 오버로딩	
 	FVector2D operator+(const FVector2D& RHS) const;  //2D 좌표는 다른 2D 좌표와 더해질 수 있다.
+	bool operator==(const FVector2D& RHS) const;
 
 //protected:
 	int X;  //2D 좌표는 가로 위치를 가지고 있다.
