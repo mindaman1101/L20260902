@@ -31,4 +31,6 @@ public:
 	FVector2D Location;  //Actor는 2D 좌표 위치를 가지고 있다.
 	char Shape;  //Actor는 화면에 표시할 모양을 가지고 있다.
 	int Layer = 0;  //Actor는 자신이 그려질 순서를 나타내는 Layer를 가지고 있다.
+
+	bool bIsCollisionEnable = false;
 };

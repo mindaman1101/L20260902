@@ -9,6 +9,7 @@
 #include "Actor.h"
 #include "InputDevice.h"
 #include <conio.h>
+#include "Renderer.h"
 
 //프로그램 시작 시에는 아직 생성된 Engine이 없다.
 UEngine* UEngine::Instance = nullptr;
@@ -40,6 +41,7 @@ UEngine* UEngine::GetInstance()
 void UEngine::Init()
 {
 	InputDevice = new FInputDevice();  //Engine은 입력을 담당할 장치를 생성한다.
+	Renderer = new FRenderer();
 
 	//map loading
 	World = new UWorld();  //Engine은 Actor들이 존재할 World를 생성한다.
@@ -53,8 +55,9 @@ void UEngine::Run()
 	{
 		Input();  //Engine은 InputDevice에게 현재 입력을 확인시킨다.
 		World->Tick();  //Engine은 World에게 모든 Actor를 갱신시킨다.
-		//system("cls");
+		Renderer->Clear();
 		World->Render();  //Engine은 World에게 모든 Actor를 그리게 한다.
+		Renderer->Present();
 	}
 }
 
