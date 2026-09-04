@@ -14,31 +14,21 @@ AMonster::~AMonster()
 {
 }
 
-void AMonster::Tick()
+void AMonster::Tick()  // 1초에 60번 이동하게 되므로 시간으로 이용 -> SDL 사용
 {
+	char VirtualKeyCode[4] = { 'w', 'a', 's', 'd' };
 	std::vector<AActor*> CollideActors;
-
-	int MoveDirection = rand() % 4;
-
-	if (MoveDirection == 0)
+	int KeyCode = VirtualKeyCode[rand() % 4];
+	if (KeyCode == 'w')
 	{
-		Location.X++;
+		Location.Y--;
 
 		if (USystemLibrary::CheckCollide(GetWorld(), this, CollideActors))
 		{
-			Location.X--;
+			Location.Y++;
 		}
 	}
-	else if (MoveDirection == 1)
-	{
-		Location.X--;
-
-		if (USystemLibrary::CheckCollide(GetWorld(), this, CollideActors))
-		{
-			Location.X++;
-		}
-	}
-	else if (MoveDirection == 2)
+	if (KeyCode == 's')
 	{
 		Location.Y++;
 
@@ -47,13 +37,22 @@ void AMonster::Tick()
 			Location.Y--;
 		}
 	}
-	else if (MoveDirection == 3)
+	if (KeyCode == 'a')
 	{
-		Location.Y--;
+		Location.X--;
 
 		if (USystemLibrary::CheckCollide(GetWorld(), this, CollideActors))
 		{
-			Location.Y++;
+			Location.X++;
+		}
+	}
+	if (KeyCode == 'd')
+	{
+		Location.X++;
+
+		if (USystemLibrary::CheckCollide(GetWorld(), this, CollideActors))
+		{
+			Location.X--;
 		}
 	}
 }

@@ -10,4 +10,6 @@ public:
 	virtual ~AMonster();
 
 	virtual void Tick() override;
+
+
 };
