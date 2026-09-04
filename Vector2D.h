@@ -1,5 +1,6 @@
 #pragma once
 
+//FVector2D는 2D 공간의 X, Y 좌표를 하나의 값으로 표현한다.
 struct FVector2D
 {
 //public:
@@ -22,7 +23,7 @@ struct FVector2D
 	//{
 	//	return X;
 	//}	
-
+	//
 	//inline void SetY(int NewValue)
 	//{
 	//	Y = NewValue;
@@ -31,7 +32,7 @@ struct FVector2D
 	//{
 	//	return Y;
 	//}
-
+	//
 	////__forceinline / FORCEINLINE
 	//inline void SetVector2D(int NewValueX, int NewValueY)
 	//{
@@ -42,14 +43,14 @@ struct FVector2D
 	//{
 	//	//FVector2D Value;
 	//	//Value.SetVector2D(this->X, this->Y);
-
+	//
 	//	return *this;
 	//}
 
 	//연산자 오버로딩	
-	FVector2D operator+(const FVector2D& RHS) const;
+	FVector2D operator+(const FVector2D& RHS) const;  //2D 좌표는 다른 2D 좌표와 더해질 수 있다.
 
 //protected:
-	int X;
-	int Y;
+	int X;  //2D 좌표는 가로 위치를 가지고 있다.
+	int Y;  //2D 좌표는 세로 위치를 가지고 있다.
 };

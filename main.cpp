@@ -45,64 +45,63 @@ using namespace std;
 //
 //int StaticClass::Count = 0;
 
-class Singleton
-{
-protected:
-	Singleton()
-	{
-	}
+//class Singleton
+//{
+//protected:
+//	Singleton()
+//	{
+//	}
+//
+//public:
+//	static Singleton* GetInstance()
+//	{
+//		if (!Singleton::Instance)
+//		{
+//			Singleton::Instance = new Singleton();
+//		}
+//
+//		return Singleton::Instance;
+//	}
+//
+//protected:
+//	static Singleton* Instance;
+//};
+//
+//Singleton* Singleton::Instance = nullptr;
 
-public:
-	static Singleton* GetInstance()
-	{
-		if (!Singleton::Instance)
-		{
-			Singleton::Instance = new Singleton();
-		}
-
-		return Singleton::Instance;
-	}
-
-protected:
-	static Singleton* Instance;
-};
-
-Singleton* Singleton::Instance = nullptr;
-
+//프로그램은 하나뿐인 Engine을 준비하고 실행한 뒤 종료한다.
 int main()
 {
 	//StaticClass Data = 10;  //안됨
-
+	//
 	//StaticClass S;
 	//S.Data = 10;
-
+	//
 	//StaticClass::Data = 20;  //선언 안해도 바로 사용 가능
-
+	//
 	//StaticClass A;
 	//StaticClass B;
 	//StaticClass* A = new StaticClass();
 	//delete A;
 	//StaticClass* B = A;
 	//cout << StaticClass::Count << endl;  //몇이 나올까?
-
+	//
 	//Singleton A;
 	//Singleton B;
 	//Singleton C;
-
+	//
 	//cout << Singleton::GetInstance() << endl;
 	//cout << Singleton::GetInstance() << endl;
 	//cout << Singleton::GetInstance() << endl;	
 	//cout << Singleton::GetInstance() << endl;
 
-
-
 	//UEngine* MyEngine = UEngine::GetInstance();
 	
-	GEngine->Init();
+	GEngine->Init();  //프로그램은 Engine에게 실행 준비를 요청한다.
 	
-	GEngine->Run();
+	GEngine->Run();  //프로그램은 Engine에게 Game Loop 실행을 요청한다.
 
-	GEngine->Exit();
+	GEngine->Exit();  //프로그램은 Engine에게 실행 종료와 정리를 요청한다.
 
 	return 0;
 }

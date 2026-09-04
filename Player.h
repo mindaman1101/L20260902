@@ -11,6 +11,8 @@
 //옛날 스타일 -> 상속 구현
 //요즘 스타일 -> 구성요소 구현
 
+
+//APlayer는 AActor이면서 사용자의 입력에 따라 움직이는 Player이다.
 class APlayer : public AActor
 {
 public:
