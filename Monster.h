@@ -8,4 +8,6 @@ public:
 	AMonster();
 
 	virtual ~AMonster();
+
+	virtual void Tick() override;
 };
